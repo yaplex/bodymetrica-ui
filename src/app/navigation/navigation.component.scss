@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.tab-content {
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width: none !important;
+    /* Firefox */
+}
+
+.tab-content::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Icons */
+.bi {
+    color: #9675e2;
+    font-size: 2em;
+}
+
+.bi:hover, .nav-link.active .bi {
+    color: #5715f2;
+}
