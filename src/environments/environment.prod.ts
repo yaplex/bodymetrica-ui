@@ -4,7 +4,7 @@ export const config = {
     "authorizationParams": {
         "audience": "https://api.bodymetrica.com"
     },
-    "apiUri": "https://bodymetrica-api.azurewebsites.net",
+    "apiUri": "https://api.bodymetrica.com",
     "errorPath": "/error"
 };
 
