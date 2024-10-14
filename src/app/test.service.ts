@@ -9,6 +9,6 @@ export class TestService {
   constructor(private http: HttpClient) { }
 
   ping$() {
-    return this.http.get(`${config.apiUri}/WeatherForecast`);
+    return this.http.get(`${config.apiUri}/Weight`);
   }
 }
