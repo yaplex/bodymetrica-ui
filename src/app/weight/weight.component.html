@@ -1,1 +1,23 @@
-<p>weight works!</p>
+<div class="container pt-3">
+
+    <div class="fab-floating">
+        <button mat-fab>
+            <mat-icon><i class="fa-solid fa-plus fa-large"></i></mat-icon>
+        </button>
+    </div>
+
+    <div class="row pb-3" *ngFor="let weight of weightLogs">
+        <div class="col-12">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-subtitle>{{weight.recordDate | date:'MMM d, y, h:mm a'}}</mat-card-subtitle>
+                    <mat-card-title>{{weight.weight}} todo: (lbs. | kg) </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+
+</div>
