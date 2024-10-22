@@ -6,12 +6,12 @@
         </button>
     </div>
 
-    <div class="row pb-3" *ngFor="let weight of weightLogs">
+    <div class="row pb-2" *ngFor="let weight of weightLogs">
         <div class="col-12">
             <mat-card appearance="outlined">
                 <mat-card-header>
                     <mat-card-subtitle>{{weight.recordDate | date:'MMM d, y, h:mm a'}}</mat-card-subtitle>
-                    <mat-card-title>{{weight.weight}} kg </mat-card-title>
+                    <mat-card-title>{{weight.weight | number: '1.1-1'}} {{userProfile.weightUnits}} </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>
                 </mat-card-content>

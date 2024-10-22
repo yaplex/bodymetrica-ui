@@ -9,7 +9,7 @@ import { BloodPressureComponent } from './blood-pressure/blood-pressure.componen
 import { AddNewWeightLogComponent } from './weight/add-new-weight-log/add-new-weight-log.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    { path: '', redirectTo: 'weight', pathMatch: 'full' },
     {
         path: 'dashboard',
         component: DashboardComponent,
