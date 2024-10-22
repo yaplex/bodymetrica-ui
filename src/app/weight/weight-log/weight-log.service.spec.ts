@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WeightLogServiceService } from './weight-log.service';
+import { WeightLogService } from './weight-log.service';
 
 describe('WeightLogServiceService', () => {
-  let service: WeightLogServiceService;
+  let service: WeightLogService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WeightLogServiceService);
+    service = TestBed.inject(WeightLogService);
   });
 
   it('should be created', () => {

@@ -9,4 +9,5 @@ $bodymetrica-theme: mat.define-theme(
 
 :root{
     @include mat.all-component-themes($bodymetrica-theme);
+    --mat-dialog-container-min-width: 0;
 }

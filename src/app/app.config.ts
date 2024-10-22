@@ -6,6 +6,7 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authHttpInterceptorFn, provideAuth0 } from '@auth0/auth0-angular';
 
 import { config } from 'src/environments/environment';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 const { domain, clientId, authorizationParams: { audience }, apiUri, errorPath } = config as {
@@ -36,6 +37,7 @@ export const environment = {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimations(),
     provideHttpClient(withInterceptors([authHttpInterceptorFn])),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

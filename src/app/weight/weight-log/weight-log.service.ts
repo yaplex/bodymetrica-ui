@@ -14,4 +14,8 @@ export class WeightLogService {
   getRecentRecords() : Observable<WeightLog[]>{
     return this.http.get<WeightLog[]>(`${config.apiUri}/WeightLog`);
   }
+
+  addNewRecord(weightLog: WeightLog) : Observable<WeightLog>{
+    return this.http.post<WeightLog>(`${config.apiUri}/WeightLog`, weightLog);
+  }
 }

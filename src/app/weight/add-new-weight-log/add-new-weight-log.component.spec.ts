@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WeightComponent } from './weight.component';
+import { AddNewWeightLogComponent } from './add-new-weight-log.component';
 
-describe('WeightComponent', () => {
-  let component: WeightComponent;
-  let fixture: ComponentFixture<WeightComponent>;
+describe('AddNewWeightLogComponent', () => {
+  let component: AddNewWeightLogComponent;
+  let fixture: ComponentFixture<AddNewWeightLogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WeightComponent]
+      imports: [AddNewWeightLogComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WeightComponent);
+    fixture = TestBed.createComponent(AddNewWeightLogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

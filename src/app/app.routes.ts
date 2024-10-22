@@ -2,13 +2,14 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { authGuardFn } from '@auth0/auth0-angular';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { WeightComponent } from './weight/weight.component';
+import { WeightLogComponent } from './weight/weight-log/weight-log.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
 import { BloodPressureComponent } from './blood-pressure/blood-pressure.component';
+import { AddNewWeightLogComponent } from './weight/add-new-weight-log/add-new-weight-log.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, 
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     {
         path: 'dashboard',
         component: DashboardComponent,
@@ -16,8 +17,18 @@ export const routes: Routes = [
     },
     {
         path: 'weight',
-        component: WeightComponent,
         canActivate: [authGuardFn],
+        canActivateChild: [authGuardFn],
+        children: [
+            {
+                path: '',
+                component: WeightLogComponent,
+            },
+            {
+                path: 'add',
+                component: AddNewWeightLogComponent
+            }
+        ]
     },
     {
         path: 'settings',
