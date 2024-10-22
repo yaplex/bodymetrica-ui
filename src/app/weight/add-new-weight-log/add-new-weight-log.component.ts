@@ -7,9 +7,12 @@ import { MatFormField, MatFormFieldModule, MatHint, MatLabel } from '@angular/ma
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { WeightLogService } from '../weight-log/weight-log.service';
+import { WeightLogService } from '../weight-log.service';
 import { Router } from '@angular/router';
 import { SpinnerComponent } from 'src/app/shared/spinner/spinner.component';
+import { PersistenceService } from 'src/app/shared/services/persistence.service';
+import { UserProfile } from 'src/app/shared/models/user-profile.model';
+import { WeightConvertor } from '../weight-convertor.model';
 
 @Component({
   selector: 'app-add-new-weight-log',
@@ -23,9 +26,12 @@ import { SpinnerComponent } from 'src/app/shared/spinner/spinner.component';
 })
 export class AddNewWeightLogComponent implements OnInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
+  userProfile: UserProfile = new UserProfile();
 
-  constructor(private fb: FormBuilder, private weightLogService: WeightLogService, private router: Router) { }
+  constructor(private fb: FormBuilder, private weightLogService: WeightLogService, private router: Router, private storage: PersistenceService) { }
   ngOnInit(): void {
+    this.userProfile = this.storage.loadUserProfile();
+
     this.addWeightForm = this.fb.group({
       weight: ['', [Validators.required, Validators.min(0)]],
       recordDate: [new Date(), Validators.required]
@@ -44,6 +50,7 @@ export class AddNewWeightLogComponent implements OnInit {
       this.spinner.show();
 
       console.log(this.addWeightForm.value);
+      this.addWeightForm.value.weight = WeightConvertor.convertNumber(this.addWeightForm.value.weight, this.userProfile.weightUnits);
       this.weightLogService.addNewRecord(this.addWeightForm.value).subscribe({
         next: (result) => {
           this.addWeightForm.reset();
