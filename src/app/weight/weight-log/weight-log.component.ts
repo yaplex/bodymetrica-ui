@@ -30,9 +30,10 @@ export class WeightLogComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this.userProfile = this.storage.loadUserProfile();
 
-    if(null == this.userProfile){
+    if (null == this.userProfile) {
       this.userProfileService.getUserProfile().subscribe({
         next: (userProfile) => {
+          this.userProfile = userProfile;
           this.storage.saveUserProfile(userProfile);
         },
         error: (error) => {
