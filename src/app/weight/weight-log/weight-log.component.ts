@@ -56,6 +56,7 @@ export class WeightLogComponent implements AfterViewInit, OnInit {
       },
       error: (error) => {
         console.error(error);
+        this.spinner.hide();
       },
       complete: () => {
         this.spinner.hide();
