@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'preview'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -57,15 +57,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_74F009FB32E9442DA239A3DD3C4116AF }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_89346FD22A3F4B1BB3DFA2FBF8D278E8 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_BCA109B8A4DA4B3B9BB89A4B6B662DFC }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_289A5B80BCAF4663A6BE84F9F2015271 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_447D900B431244029F9406821E996E9C }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_60814FC7B896497584FA50BF021D29F0 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'bodymetrica-ui-app'
-          slot-name: 'preview'
+          app-name: 'bodymetrica-ui'
+          slot-name: 'Production'
           package: ./dist/bodymetrica-angular-ui/
           
