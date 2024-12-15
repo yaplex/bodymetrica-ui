@@ -1,5 +1,5 @@
 export const config = {
-    "domain": "bodymetrica.us.auth0.com",
+    "domain": "auth.bodymetrica.com",
     "clientId": "a5Yu05ZjTUZBdEbWPy5toQ9u7NsELxWI",
     "authorizationParams": {
         "audience": "https://api.bodymetrica.com"
