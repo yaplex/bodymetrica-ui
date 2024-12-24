@@ -37,7 +37,7 @@ export class AddNewWeightLogComponent implements OnInit {
       recordDate: [new Date(), Validators.required]
     });
   }
-  readonly date = new FormControl(new Date());
+   
   addWeightForm: FormGroup = new FormGroup('');
 
   myFilter = (d: Date | null): boolean => {
