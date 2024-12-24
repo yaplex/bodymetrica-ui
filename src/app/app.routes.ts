@@ -5,8 +5,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { WeightLogComponent } from './weight/weight-log/weight-log.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
-import { BloodPressureComponent } from './blood-pressure/blood-pressure.component';
+import { BloodPressureLogComponent } from './blood-pressure/blood-pressure-log/blood-pressure-log.component';
 import { AddNewWeightLogComponent } from './weight/add-new-weight-log/add-new-weight-log.component';
+import { AddNewBloodPressureLogComponent } from './blood-pressure/add-new-blood-pressure-log/add-new-blood-pressure-log.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'weight', pathMatch: 'full' },
@@ -42,8 +43,18 @@ export const routes: Routes = [
     },
     {
         path: 'blood-pressure',
-        component: BloodPressureComponent,
         canActivate: [authGuardFn],
+        canActivateChild: [authGuardFn],
+        children: [
+            {
+                path: '',
+                component: BloodPressureLogComponent,
+            },
+            {
+                path: 'add',
+                component: AddNewBloodPressureLogComponent
+            }
+        ]
     },
 
 ];

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BloodPressureComponent } from './blood-pressure.component';
+import { BloodPressureLogComponent } from './blood-pressure-log.component';
 
 describe('BloodPressureComponent', () => {
-  let component: BloodPressureComponent;
-  let fixture: ComponentFixture<BloodPressureComponent>;
+  let component: BloodPressureLogComponent;
+  let fixture: ComponentFixture<BloodPressureLogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BloodPressureComponent]
+      imports: [BloodPressureLogComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(BloodPressureComponent);
+    fixture = TestBed.createComponent(BloodPressureLogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
