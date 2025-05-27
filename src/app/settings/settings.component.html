@@ -1,0 +1,28 @@
+<div class="container px-3 py-3">
+    <div class="row">
+        <div class="col-8">
+            <h5>Settings</h5>
+        </div>
+        <div class="col-4">
+            <button mat-fab extended (click)="logout()" type="button">
+                <mat-icon><i class="fa-solid fa-door-open fa-large"></i></mat-icon>
+                Logout
+            </button>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-12 pt-1">
+            <section>
+                <div class="settings-label h6">Weight Units</div>
+                <div class="settings-value">
+                    <mat-button-toggle-group name="weightUnits" [(ngModel)]="userProfile.weightUnits" (change)="updateWeightUnits($event)">
+                        <mat-button-toggle value="kg">Metric (kg)</mat-button-toggle>
+                        <mat-button-toggle value="lb">Imperial (lb)</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<app-spinner></app-spinner>

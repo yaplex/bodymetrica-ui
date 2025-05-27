@@ -1,0 +1,16 @@
+.mat-mdc-card-subtitle{
+    font-weight: normal;
+}
+.fa-large{
+    font-size:1.7em;
+}
+
+.fab-floating {
+    position: fixed;
+    bottom: 12vh;
+    right: 5vw;
+    z-index: 100;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
