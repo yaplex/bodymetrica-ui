@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, ViewChild, ViewChildren, DOCUMENT } from '@angular/core';
 import { MatButtonToggleChange, MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDivider } from '@angular/material/divider';
 import { MatIcon } from '@angular/material/icon';
@@ -9,7 +9,7 @@ import { UserProfile } from '../shared/models/user-profile.model';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '@auth0/auth0-angular';
-import { DOCUMENT } from '@angular/common';
+
 
 @Component({
     selector: 'app-settings',
