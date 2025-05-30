@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit, ViewChild, ViewChildren, DOCUMENT } from '@angular/core';
 import { MatButtonToggleChange, MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDivider } from '@angular/material/divider';
 import { MatIcon } from '@angular/material/icon';
@@ -9,14 +9,13 @@ import { UserProfile } from '../shared/models/user-profile.model';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '@auth0/auth0-angular';
-import { DOCUMENT } from '@angular/common';
+
 
 @Component({
-  selector: 'app-settings',
-  standalone: true,
-  imports: [MatDivider, MatIcon, MatButtonToggleModule, SpinnerComponent, FormsModule, MatIcon, MatButtonModule],
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.scss'
+    selector: 'app-settings',
+    imports: [MatIcon, MatButtonToggleModule, SpinnerComponent, FormsModule, MatIcon, MatButtonModule],
+    templateUrl: './settings.component.html',
+    styleUrl: './settings.component.scss'
 })
 export class SettingsComponent implements AfterViewInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;

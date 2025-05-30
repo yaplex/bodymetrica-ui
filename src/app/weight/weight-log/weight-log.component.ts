@@ -13,11 +13,10 @@ import { UserProfile } from 'src/app/shared/models/user-profile.model';
 import { UserProfileService } from 'src/app/settings/user-profile.service';
 
 @Component({
-  selector: 'app-weight-log',
-  standalone: true,
-  imports: [NgFor, MatCardModule, DatePipe, MatIconModule, MatButtonModule, RouterLink, SpinnerComponent, DecimalPipe],
-  templateUrl: './weight-log.component.html',
-  styleUrl: './weight-log.component.scss'
+    selector: 'app-weight-log',
+    imports: [NgFor, MatCardModule, DatePipe, MatIconModule, MatButtonModule, RouterLink, SpinnerComponent, DecimalPipe],
+    templateUrl: './weight-log.component.html',
+    styleUrl: './weight-log.component.scss'
 })
 export class WeightLogComponent implements AfterViewInit, OnInit {
 

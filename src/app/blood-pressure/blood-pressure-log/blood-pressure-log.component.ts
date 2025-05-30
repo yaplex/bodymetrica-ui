@@ -9,11 +9,10 @@ import { RouterLink } from '@angular/router';
 import { SpinnerComponent } from 'src/app/shared/spinner/spinner.component';
 
 @Component({
-  selector: 'app-blood-pressure-log',
-  standalone: true,
-  imports: [NgFor, MatCardModule, DatePipe, MatIconModule, MatButtonModule, RouterLink, SpinnerComponent],
-  templateUrl: './blood-pressure-log.component.html',
-  styleUrl: './blood-pressure-log.component.scss'
+    selector: 'app-blood-pressure-log',
+    imports: [NgFor, MatCardModule, DatePipe, MatIconModule, MatButtonModule, RouterLink, SpinnerComponent],
+    templateUrl: './blood-pressure-log.component.html',
+    styleUrl: './blood-pressure-log.component.scss'
 })
 export class BloodPressureLogComponent implements AfterViewInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
