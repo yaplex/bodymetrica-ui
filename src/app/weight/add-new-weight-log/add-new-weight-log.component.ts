@@ -15,14 +15,13 @@ import { UserProfile } from 'src/app/shared/models/user-profile.model';
 import { WeightConvertor } from '../weight-convertor.model';
 
 @Component({
-  selector: 'app-add-new-weight-log',
-  standalone: true,
-  imports: [MatFormField, MatLabel, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule,
-    ReactiveFormsModule, MatIcon, MatIconModule, MatButtonModule, SpinnerComponent],
-  providers: [provideNativeDateAdapter()],
-  templateUrl: './add-new-weight-log.component.html',
-  styleUrl: './add-new-weight-log.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-add-new-weight-log',
+    imports: [MatFormField, MatLabel, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule,
+        ReactiveFormsModule, MatIcon, MatIconModule, MatButtonModule, SpinnerComponent],
+    providers: [provideNativeDateAdapter()],
+    templateUrl: './add-new-weight-log.component.html',
+    styleUrl: './add-new-weight-log.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddNewWeightLogComponent implements OnInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;

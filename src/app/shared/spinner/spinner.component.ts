@@ -12,11 +12,10 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-spinner',
-  standalone: true,
-  imports: [MatProgressSpinnerModule, NgIf, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
-  styleUrl: './spinner.component.scss',
-  template: ''
+    selector: 'app-spinner',
+    imports: [MatProgressSpinnerModule, MatButtonModule],
+    styleUrl: './spinner.component.scss',
+    template: ''
 })
 export class SpinnerComponent {
   readonly dialog = inject(MatDialog);
@@ -35,11 +34,10 @@ export class SpinnerComponent {
 
 
 @Component({
-  selector: 'app-spinner-dialog',
-  templateUrl: './spinner.component.html',
-  standalone: true,
-  imports: [MatProgressSpinnerModule, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-spinner-dialog',
+    templateUrl: './spinner.component.html',
+    imports: [MatProgressSpinnerModule, MatButtonModule, MatDialogContent],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpinnerDialogComponent {
   public loadingMessage: string = "Loading...";

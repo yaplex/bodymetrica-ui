@@ -13,13 +13,12 @@ import { UserProfile } from 'src/app/shared/models/user-profile.model';
 import { BloodPressureService } from '../blood-pressure.service';
 
 @Component({
-  selector: 'app-add-new-blood-pressure-log',
-  standalone: true,
-  imports: [MatFormField, MatLabel, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule,
-    ReactiveFormsModule, MatIcon, MatIconModule, MatButtonModule, SpinnerComponent],
-  providers: [provideNativeDateAdapter()],
-  templateUrl: './add-new-blood-pressure-log.component.html',
-  styleUrl: './add-new-blood-pressure-log.component.scss'
+    selector: 'app-add-new-blood-pressure-log',
+    imports: [MatFormField, MatLabel, MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule,
+        ReactiveFormsModule, MatIcon, MatIconModule, MatButtonModule, SpinnerComponent],
+    providers: [provideNativeDateAdapter()],
+    templateUrl: './add-new-blood-pressure-log.component.html',
+    styleUrl: './add-new-blood-pressure-log.component.scss'
 })
 export class AddNewBloodPressureLogComponent implements OnInit {
   @ViewChild(SpinnerComponent) spinner!: SpinnerComponent;
